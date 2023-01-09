@@ -24,6 +24,8 @@ The chosen infrastructure looks like the below:
 
 ### Event producer
 
+The code for the event producer was sourced from [theCodingInterface](https://thecodinginterface.com/blog/kafka-source-sink-with-apache-flink-table-api/).
+
 The event producer is a containerized python application that randomly create sales events with schema {"seller_id": string, "amount_usd": integer, "sale_ts": integer}; where the `seller_id` is picked from a list of 4 ids; and `sale_ts` is the timestamp of the sale event, taken as the epoch time when the record is created.
 
 The records are pushed to the Kafka topic `sales-usd`.
