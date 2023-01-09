@@ -44,6 +44,8 @@ Examples of 1-minute aggregated sales data are shown below:
 
 ### Build the required images
 
+Download [apache-flink-libraries-1.16.0](https://pypi.org/project/apache-flink-libraries/#files) and [apache-flink-1.16.0](https://pypi.org/project/apache-flink/#files) `.tar.gz` files and put them in the folder `flink_cluster`. These files are required to build the pyflink image.
+
 One needs to build the image for Flink with python and pyflink; as well as the image for the producer.
 
 ```console
