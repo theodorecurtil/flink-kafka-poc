@@ -44,21 +44,7 @@ Examples of 1-minute aggregated sales data are shown below:
 
 ## Get the PoC up and running
 
-### Build the required images
-
-Download [apache-flink-libraries-1.16.0](https://pypi.org/project/apache-flink-libraries/#files) and [apache-flink-1.16.0](https://pypi.org/project/apache-flink/#files) `.tar.gz` files and put them in the folder `flink_cluster`. These files are required to build the pyflink image.
-
-One needs to build the image for Flink with python and pyflink; as well as the image for the producer.
-
-```console
-$ cd acosom_assessment # cd to the project root directory
-
-$ cd flink_cluster
-$ docker build -t pyflink .
-
-$ cd ../kafka_producer
-$ docker build -t sales_producer .
-```
+Note that the Docker images for Flink (with Python and Python package `apache-flink`) and the Python sales producer are available on [Docker Hub - theodorecurtil](https://hub.docker.com/u/theodorecurtil). Though, the code to locally build the images is available in this github repo.
 
 ### Deploy the infrastructure
 
@@ -82,7 +68,7 @@ The Flink UI can then be accessed on [http://localhost:8081/#/overview](http://l
 Open a new terminal window to start the Kafka producer and to submit the job to the Flink cluster:
 
 ```console
-$ docker run -d --rm --name=sales_producer sales_producer
+$ docker run -d --rm --name=sales_producer theodorecurtil/sales_producer:latest
 
 $ docker exec -it jobmanager bash
 master@jobmanager: $ cd jobs

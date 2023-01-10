@@ -8,7 +8,7 @@ docker run -d --rm \
     --publish 8081:8081 \
     -v /home/theodorecurtil/acosom_assessment/flink_job:/opt/flink/jobs \
     --env FLINK_PROPERTIES="${FLINK_PROPERTIES}" \
-    pyflink jobmanager
+    theodorecurtil/pyflink:1.16-py3.7.9 jobmanager
 
 docker run \
     --rm \
@@ -16,4 +16,4 @@ docker run \
     --network flink-network \
     -v /home/theodorecurtil/acosom_assessment/flink_job:/opt/flink/jobs \
     --env FLINK_PROPERTIES="${FLINK_PROPERTIES}" \
-    pyflink taskmanager
+    theodorecurtil/pyflink:1.16-py3.7.9 taskmanager
